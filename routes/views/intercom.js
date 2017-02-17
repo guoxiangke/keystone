@@ -1,6 +1,21 @@
 /**
  * Created by dale.guo on 2/17/17.
  */
+var keystone = require('keystone');
+
+exports = module.exports = function (req, res) {
+
+	var view = new keystone.View(req, res);
+	var locals = res.locals;
+
+	// locals.section is used to set the currently selected
+	// item in the header navigation.
+	locals.section = 'chat';
+
+	// Render the view
+	view.render('intercom');
+};
+
 var express = require('express');
 var router = express.Router();
 var path = require('path');
