@@ -19,5 +19,5 @@ exports = module.exports = function (app) {
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
-
+	app.use('/a/:namespace/:room_id', routes.views.intercom);//某公司的livechat.com/room/companyId/roomId
 };
